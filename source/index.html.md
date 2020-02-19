@@ -2,10 +2,7 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - http
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -29,10 +26,26 @@ This example API documentation page was created with [Slate](https://github.com/
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
+```http
+returnmode=urlencodeext
+&txtype=TRANSACTION
+&login=testclient
+&password=test123
+&contractid=TESTCONTRACT
+&channel=testchannel
+&tag=klarna
+&currency=EUR
+&amount=250
+&countrycode=DE
+&accountholdername=jon+dow
+&merchanttxid=sale1002
+&merchantredirecturl=https%3A%2F%2Fwww.example.org%2Ffeedback.php
+&notificationurl=https%3A%2F%2Fwww.example.org%2Fnotification.php
+&specin.dynamicdescriptor=Testshop
+&specin.taxamount=5
+&transientin.orderitems=%5B%7B%22name%22%3A%22BatteryPowerPack%22%2C%22quantity%22
+,→%3A1%2C%22unit_price%22%3A100%2C%22total_amount%22%3A100%7D%5D
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
 ```
 
 ```python
@@ -236,4 +249,3 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
-
